@@ -5,13 +5,23 @@ const VideoListItem = ({ video, onVideoSelect }) => {
   const imageURL = video.snippet.thumbnails.default.url;
 
   return (
-    <li onClick={() => onVideoSelect(video)} className="list-group-item">
-      <div className="video-list media">
+    <li className="list-group-item">
+      <div
+        onClick={() => onVideoSelect(video)}
+        className="video-list media"
+        role="presentation"
+      >
         <div className="media-left">
-          <img className="media-object" alt="" src={imageURL} />
+          <img
+            className="media-object"
+            alt=""
+            src={imageURL}
+          />
         </div>
         <div className="media-body">
-          <div className="media-heading">{video.snippet.title}</div>
+          <div className="media-heading">
+            {video.snippet.title}
+          </div>
         </div>
       </div>
     </li>
